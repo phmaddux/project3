@@ -7,18 +7,22 @@ const UserSchema = new Schema({
     name: {
         type: String,
         required: true,
-        unique: ture
+        unique: true
     },
     password: {
         type: String,
+    },
+    picture: {
+        type: String
     }
 })
 
-const ProjectVariantsSchema = new Schema({
-    picture: { 
-        type: tring,
+const ProjectVariantSchema = new Schema({
+    name: {
+        type: String,
+        required: true
     },
-    variantName: {
+    picture: {
         type: String,
     },
     description: {
@@ -31,7 +35,7 @@ const ProjectVariantsSchema = new Schema({
         type: String,
     },
     schematics: {
-        type: string
+        type: String
     }
 })
 
@@ -40,23 +44,31 @@ const ProjectSchema = new Schema({
     type: {
         type: String,
         required: true,
-        
     },
-    country: {
+    description: {
+        type: String
+    },
+    picture: {
         type: String,
-        required: true
     },
-    projectVariants: [ProjectVariantsSchema]
+    materials: {
+        type: String,
+    },
+    tools: {
+        type: String,
+    },
+    projectVariants: [ProjectVariantSchema]
+
 });
 
 // Creating models for each schema
-const UserModel = mongoose.model('User',UserSchema)
-const ProjectVariantsModel = mongoose.model('ProjectVariants', ProjectVariantsSchema)
-const ProjectsSchemaModel = mongoose.model('ProjectsSchema', ProjectsSchemaSchema)
+const UserModel = mongoose.model('User', UserSchema)
+const ProjectVariantModel = mongoose.model('ProjectVariants', ProjectVariantSchema)
+const ProjectSchemaModel = mongoose.model('ProjectSchema', ProjectSchema)
 
 // Exporting each model
 module.exports = {
     UserModel: UserModel,
-    ProjectVariantsModel: ProjectVariantsModel,
-    ProjectsSchemaModel: ProjectsSchemaModel
+    ProjectVariantModel: ProjectVariantModel,
+    ProjectSchemaModel: ProjectSchemaModel
 }
