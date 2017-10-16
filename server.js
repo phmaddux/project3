@@ -1,12 +1,14 @@
 require("dotenv").config();
 const express = require('express');
 const bodyParser = require('body-parser');
+const UsersController = require('./routes/UsersController')
 const mongoose = require('mongoose');
-const app = express();
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/project3
+const app = express();
 
+mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/project3
 const connection = mongoose.connection;
+
 connection.on('connected', () => {
   console.log('Mongoose Connected Successfully');    
 }); 
@@ -18,6 +20,9 @@ connection.on('error', (err) => {
 
 app.use(express.static(__dirname + '/client/build/'));
 app.use(bodyParser.json());
+app.use('/api/users', UsersController)
+
+
 app.get('/', (req,res) => {
   res.sendFile(__dirname + '/client/build/index.html')
 })
