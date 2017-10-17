@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+import styled from 'styled-components'
+
+const Form = styled.div`
+font-size: 1rem;
+margin: 15px 15px 15px 15px;
+`
+
 
 class SignUpPage extends Component {
     state = {
@@ -34,27 +41,26 @@ class SignUpPage extends Component {
 
         return (
             <div>
-                <h1></h1>
                 <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <label htmlFor="name">Profile Name</label>
+                    <Form>
+                        <label htmlFor="name">Profile Name: </label>
                         <input
                             onChange={this.handleChange} name="name"
                             type="text" value={this.state.newUser.name}
                         />
-                    </div>
-                    <div>
-                        <label htmlFor="password">Password</label>
+                    </Form>
+                    <Form>
+                        <label htmlFor="password">Password: </label>
                         <input onChange={this.handleChange}
                             value={this.state.newUser.password}
                             name="password" type="text" />
-                    </div>
-                    <div>
-                        <label htmlFor="picture">Picture Url</label>
+                    </Form>
+                    <Form>
+                        <label htmlFor="picture">Picture Url: </label>
                         <input onChange={this.handleChange}
                             value={this.state.newUser.picture}
                             name="picture" type="text" />
-                    </div>
+                    </Form>
                     <button>Sign Up</button>
                 </form>
             </div>

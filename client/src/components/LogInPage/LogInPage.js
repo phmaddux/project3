@@ -5,13 +5,15 @@ import SignUpPage from './SignUpPage'
 import styled from 'styled-components'
 
 const Heading = styled.div`
-    font-size: 4.75rem;
-    font-weight: Bold;
+font-size: 4.75rem;
+font-weight: Bold;
+margin: 15px 30px;
 `
 const Intro = styled.div` {
-    font-size: 2rem;
+font-size: 2rem;
+margin: 15px 30px;
 }
-`;
+`
 
 const UsersContainer = styled.div`
 background-color: #fff;
