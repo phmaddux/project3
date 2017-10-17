@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { Redirect } from 'react-router-dom'
 
 class SignUpPage extends Component {
     state = {
@@ -8,7 +9,7 @@ class SignUpPage extends Component {
             password: '',
             picture: '',
         },
-        redirectToProjects: false,
+        redirectToLogin: false,
         newUserId: ''
     }
 
@@ -24,16 +25,16 @@ class SignUpPage extends Component {
         const res = await axios.post('/api/users', {
             'user': this.state.newUser
         })
-        this.setState({ redirectToProjects: true, newUserId: res.data._id })
+        this.setState({ redirectToLogin: true, newUserId: res.data._id })
     }
     render() {
-        if (this.state.redirectToProject) {
-            return <redirect to={'/login'} />
+        if (this.state.redirectToLogin) {
+            return <Redirect to={'/login/${this.state.newUserID}'} />
         }
 
         return (
             <div>
-                <h1>Join Us</h1>
+                <h1></h1>
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="name">Profile Name</label>
@@ -47,6 +48,12 @@ class SignUpPage extends Component {
                         <input onChange={this.handleChange}
                             value={this.state.newUser.password}
                             name="password" type="text" />
+                    </div>
+                    <div>
+                        <label htmlFor="picture">Picture Url</label>
+                        <input onChange={this.handleChange}
+                            value={this.state.newUser.picture}
+                            name="picture" type="text" />
                     </div>
                     <button>Sign Up</button>
                 </form>

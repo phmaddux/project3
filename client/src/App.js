@@ -6,20 +6,28 @@ import LogInPage from './components/LogInPage/LogInPage'
 import ProjectPage from './components/ProjectPage/ProjectPage'
 import VariantPage from './components/VariantPage/VariantPage'
 
+const Banner = styled.div`
+text-size; 100px;
+height: 300px;
+width: 300px;
+
+`
 
 class App extends Component {
-  render () {
+  render() {
     return (
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" component={HomePage}/>
-            <Route exact path="/login" component={LogInPage}/>
-            <Route exact path="/project" component={ProjectPage}/>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/login" component={LogInPage} />
+            <Route exact path="/project" component={ProjectPage} />
+            <Route exact path="/variant" component={VariantPage} />
           </Switch>
-          <div>
-            <Link to='/login'>Login</Link>
-          </div>
+          <Banner>
+            <Link to='/login'>Login </Link>
+            <Link to='/project'> Project Types</Link>
+          </Banner>
         </div>
       </Router>
     )
