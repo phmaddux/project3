@@ -14,32 +14,29 @@ font-size: 2rem;
 margin: 15px 30px;
 }
 `
-
 const UsersContainer = styled.div`
-background-color: #fff;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+background: rgba(225, 225, 225, .5);
 border-radius: 3px;
-width: 95vw;
-max-width: 600px;
+width: 85vw;
 margin: 20px auto;
 border: 1px solid #e6e6e6;
-`;
-const UserStyle = styled.div`
-    border-radius: 3px;  
-    border: 1px solid #e6e6e6;
-    display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 16px;
-  img{
-    height: 30px;
-    width: 30px;
-    border-radius: 100%;
-  }
-  span{
-    padding-left: 5px;
-    font-weight: bold;
-  }
-`;
+`
+const UserStyle = styled.div`   
+border-radius: 3px;  
+border: 1px solid #e6e6e6;
+display: flex;
+flex-grow: 1;
+justify-content: center;
+align-items: center;
+padding: 16px;
+    img{
+        height: 65px;
+        width: 65px;
+        border-radius: 40%;
+`
 
 class LogInPage extends Component {
     state = {
@@ -65,8 +62,8 @@ class LogInPage extends Component {
                     {this.state.users.map(user => {
                         return (
                             <UserStyle>
+                                <img src={user.picture} alt=""/>
                                 <Link key={user._id} to={`/'/login/${this.state.newUserID}'`}>{user.name} </Link>
-                                <img src={user.picture} alt="${user.name}'s picture"/>
                             </UserStyle>
                         )
                     })}
