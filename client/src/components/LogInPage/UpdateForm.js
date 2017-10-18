@@ -29,7 +29,6 @@ class UpdateForm extends Component {
     updateUser = async (event) => {
         event.preventDefault()
         const res = await axios.patch('/api/users/:id', {
-            // const res = await axios.patch(`/api/users/${userId}`)
             'user': this.state.user
         })
         this.setState({ redirectToLogin: true, newUserId: res.data._id })

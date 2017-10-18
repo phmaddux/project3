@@ -40,6 +40,7 @@ margin: 15px 30px;
         height: 100px;
         width: 100px;
         border-radius: 40%;
+    }
 `
 
 class LogInPage extends Component {
@@ -76,7 +77,7 @@ class LogInPage extends Component {
                         return (
                             <UserStyle>
                                 <img src={user.picture} alt="" />
-                                <Link key={user._id} to={`/login/users/${user._id}'`}>{user.name} </Link>
+                                <Link key={user._id} to={`/login/users/${user._id}`}>{user.name} </Link>
                                 <button onClick={() => this.deleteUser(user._id)}>Delete</button>
                             </UserStyle>
                         )
