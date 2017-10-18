@@ -30,4 +30,11 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.delete('/:id', async (req, res) => {
+    const user = await User.findById(req.params.userId)
+    user.id(req.params.id).remove()
+    const saved = await users.save()
+    res.json(saved)
+  })
+
 module.exports = router;

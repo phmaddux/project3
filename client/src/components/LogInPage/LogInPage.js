@@ -18,23 +18,27 @@ const UsersContainer = styled.div`
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
-background: rgba(225, 225, 225, .5);
+background: rgba(225, 225, 225, .3);
 border-radius: 3px;
 width: 85vw;
-margin: 20px auto;
+margin: 10px auto;
 border: 1px solid #e6e6e6;
 `
 const UserStyle = styled.div`   
 border-radius: 3px;  
 border: 1px solid #e6e6e6;
+background: rgba(225, 225, 225, .3);
 display: flex;
 flex-grow: 1;
 justify-content: center;
 align-items: center;
 padding: 16px;
+font-size: 1.75rem;
+font-weight: Bold;
+margin: 15px 30px;
     img{
-        height: 65px;
-        width: 65px;
+        height: 100px;
+        width: 100px;
         border-radius: 40%;
 `
 
@@ -62,8 +66,8 @@ class LogInPage extends Component {
                     {this.state.users.map(user => {
                         return (
                             <UserStyle>
-                                <img src={user.picture} alt=""/>
-                                <Link key={user._id} to={`/'/login/${this.state.newUserID}'`}>{user.name} </Link>
+                                <img src={user.picture} alt="" />
+                                <Link key={user._id} to={`/login/users/${this.state.UserID}'`}>{user.name} </Link>
                             </UserStyle>
                         )
                     })}
