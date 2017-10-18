@@ -17,7 +17,7 @@ class UpdateForm extends Component {
             description: '',
         },
         redirectToUser: false,
-        newUserId: ''
+        user: ''
     }
 
     handleChange = (event) => {
@@ -28,7 +28,8 @@ class UpdateForm extends Component {
     }
     updateUser = async (event) => {
         event.preventDefault()
-        const res = await axios.patch('/api/users/:id', {
+        console.log(this.props.userId)
+        const res = await axios.patch(`/api/users/${this.props.userId}`, {
             'user': this.state.user
         })
         this.setState({ redirectToLogin: true, newUserId: res.data._id })
@@ -36,7 +37,7 @@ class UpdateForm extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.updateUser}>
                     <Form>
                         <label htmlFor="name">Profile Name: </label>
                         <input

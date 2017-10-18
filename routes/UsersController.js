@@ -31,17 +31,18 @@ router.post('/', async (req, res) => {
 })
 
 router.patch('/:id', async (req, res) => {
-    await UserModel.findByIdAndUpdate(req.params.id)
-    const users = await UserModel.find({})
+    console.log(req.body)
+    const user = await UserModel.findById(req.params.id)
+    const updatedUser = req.body.user
+    console.log(user)
+    console.log(updatedUser)
     user.name = updatedUser.name
     user.password = updatedUser.password
     user.picture = updatedUser.picture
-    user.description = updatedUser.description
-    // Save the user object
-    const saved = await UserModel.save()
-    // Send the updated user.
-    res.json(users)
-    console.log(users)
+    user.aboutMe = updatedUser.aboutMe
+    const saved = await user.save()
+    // res.json(users)
+    console.log(saved)
 })
 
 router.delete('/:id', async (req, res) => {

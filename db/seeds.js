@@ -16,7 +16,7 @@ const user2 = new UserModel({
     name: 'Hunter',
     password: 'Placeholder',
     picture: 'https://i.imgur.com/9YLh9UD.jpg',
-    aboutMe: 'I got too fat for my armor, so my my knightly title is "sir cumference".'
+    aboutMe: 'I got too fat for my armor, so my knightly title is now, "sir cumference".'
 })
 const user3 = new UserModel({
     name: 'Hephaestus',

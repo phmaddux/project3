@@ -58,7 +58,7 @@ class UsersPage extends Component {
                 <AboutMe>
                 {this.state.user.aboutMe}
                 </AboutMe>
-                <UpdateForm />
+                <UpdateForm userId={this.props.match.params.id }/>
             </div>
         );
     }
