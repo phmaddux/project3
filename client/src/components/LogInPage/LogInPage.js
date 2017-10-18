@@ -58,9 +58,13 @@ class LogInPage extends Component {
         }
     }
     deleteUser = async (userId) => {
-    const res = await axios.delete(`/api/users/${userId}`)
-    this.setState({users: res.data})
-    console.log(res.data)
+        try {
+            const res = await axios.delete(`/api/users/${userId}`)
+            this.setState({ users: res.data })
+            console.log(res.data)
+        } catch (err) {
+            console.log(err)
+        }
     }
     render() {
         return (

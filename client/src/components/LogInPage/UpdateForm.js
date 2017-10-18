@@ -8,37 +8,33 @@ font-size: 1.25rem;
 margin: 15px 15px 15px 15px;
 `
 
-class SignUpPage extends Component {
+class UpdateForm extends Component {
     state = {
-        newUser: {
+        user: {
             name: '',
             password: '',
             picture: '',
             description: '',
         },
-        redirectToLogin: false,
+        redirectToUser: false,
         newUserId: ''
     }
 
     handleChange = (event) => {
         const attribute = event.target.name
-        const updateUser = { ...this.state.newUser }
+        const updateUser = { ...this.state.user }
         updateUser[attribute] = event.target.value
-        this.setState({ newUser: updateUser })
+        this.setState({ user: updateUser })
     }
-
-    handleSubmit = async (event) => {
+    updateUser = async (event) => {
         event.preventDefault()
-        const res = await axios.post('/api/users', {
-            'user': this.state.newUser
+        const res = await axios.patch('/api/users/:id', {
+            // const res = await axios.patch(`/api/users/${userId}`)
+            'user': this.state.user
         })
         this.setState({ redirectToLogin: true, newUserId: res.data._id })
     }
     render() {
-        if (this.state.redirectToLogin) {
-            return <Redirect to={'/login/${this.state.newUserID}'} />
-        }
-
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -46,32 +42,32 @@ class SignUpPage extends Component {
                         <label htmlFor="name">Profile Name: </label>
                         <input
                             onChange={this.handleChange} name="name"
-                            type="text" value={this.state.newUser.name}
+                            type="text" value={this.state.user.name}
                         />
                     </Form>
                     <Form>
                         <label htmlFor="password">Password: </label>
                         <input onChange={this.handleChange}
-                            value={this.state.newUser.password}
+                            value={this.state.user.password}
                             name="password" type="text" />
                     </Form>
                     <Form>
                         <label htmlFor="picture">Picture Url: </label>
                         <input onChange={this.handleChange}
-                            value={this.state.newUser.picture}
+                            value={this.state.user.picture}
                             name="picture" type="text" />
                     </Form>
                     <Form>
                         <label htmlFor="aboutMe">About You: </label>
                         <input onChange={this.handleChange}
-                            value={this.state.newUser.aboutMe}
+                            value={this.state.user.aboutMe}
                             name="aboutMe" type="text" />
                     </Form>
-                    <button>Sign Up</button>
+                    <button>Update</button>
                 </form>
             </div>
         );
     }
 }
 
-export default SignUpPage;
+export default UpdateForm;
