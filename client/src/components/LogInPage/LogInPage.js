@@ -57,6 +57,11 @@ class LogInPage extends Component {
             console.log(err)
         }
     }
+    deleteUser = async (userId) => {
+    const res = await axios.delete(`/api/users/${userId}`)
+    this.setState({users: res.data})
+    console.log(res.data)
+    }
     render() {
         return (
             <div>
@@ -67,7 +72,8 @@ class LogInPage extends Component {
                         return (
                             <UserStyle>
                                 <img src={user.picture} alt="" />
-                                <Link key={user._id} to={`/login/users/${this.state.UserID}'`}>{user.name} </Link>
+                                <Link key={user._id} to={`/login/users/${user._id}'`}>{user.name} </Link>
+                                <button onClick={() => this.deleteUser(user._id)}>Delete</button>
                             </UserStyle>
                         )
                     })}

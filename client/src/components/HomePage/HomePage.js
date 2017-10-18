@@ -4,11 +4,11 @@ import styled from 'styled-components'
 const Heading = styled.div`
     font-size: 4.75rem;
     font-weight: Bold;
-    margin: 15px 30px;
+    margin: 35px 30px;
 `
 const Intro = styled.div` {
     font-size: 2rem;
-    margin: 15px 30px;
+    margin: 15px 50px;
 }
 `;
 

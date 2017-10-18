@@ -2,8 +2,10 @@ body {
   background-image: url("https://i.imgur.com/4U3pA0i.jpg");
   background-color: #cccccc;
   background-size: cover;
-  color: rgb(227, 225, 225);
-  margin: 0;
-  padding: 0;
+  color: rgb(181, 181, 181);
   font-family: sans-serif;
+  text-shadow: 3px 4px #2b2b2b;  
+}
+a {
+  color: rgb(181, 181, 181);
 }

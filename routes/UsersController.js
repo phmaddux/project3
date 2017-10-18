@@ -15,26 +15,30 @@ router.get('/:id', async (req, res) => {
     try {
         const user = await UserModel.findById(req.params.id)
         res.json(user)
-    }   catch (err) {
+    } catch (err) {
         res.send(err)
     }
 })
 
 router.post('/', async (req, res) => {
     try {
-        const newUser =new UserModel(req.body.user)
+        const newUser = new UserModel(req.body.user)
         const saved = await newUser.save()
         res.json(saved)
-    }   catch (err) {
+    } catch (err) {
         res.send(err)
     }
 })
 
 router.delete('/:id', async (req, res) => {
-    const user = await User.findById(req.params.userId)
-    user.id(req.params.id).remove()
-    const saved = await users.save()
-    res.json(saved)
-  })
+    try {
+        await UserModel.findByIdAndRemove(req.params.id)   
+        const users = await UserModel.find({})
+        res.json(users)
+    } catch (err) {
+        console.log(err)
+        res.send(err)
+    }
+})
 
 module.exports = router;
