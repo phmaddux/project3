@@ -13,7 +13,10 @@ const UserSchema = new Schema({
         type: String,
     },
     picture: {
-        type: String
+        type: String,
+    },
+    aboutMe: {
+        type: String,
     }
 })
 

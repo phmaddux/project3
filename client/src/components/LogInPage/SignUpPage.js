@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Form = styled.div`
-font-size: 1rem;
+font-size: 1.25rem;
 margin: 15px 15px 15px 15px;
 `
 
@@ -60,6 +60,12 @@ class SignUpPage extends Component {
                         <input onChange={this.handleChange}
                             value={this.state.newUser.picture}
                             name="picture" type="text" />
+                    </Form>
+                    <Form>
+                        <label htmlFor="aboutMe">About You: </label>
+                        <input onChange={this.handleChange}
+                            value={this.state.newUser.aboutMe}
+                            name="aboutMe" type="text" />
                     </Form>
                     <button>Sign Up</button>
                 </form>

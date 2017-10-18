@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import styled from 'styled-components'
 import HomePage from './components/HomePage/HomePage'
 import LogInPage from './components/LogInPage/LogInPage'
+import UsersPage from './components/LogInPage/UsersPage'
 import ProjectPage from './components/ProjectPage/ProjectPage'
 import VariantPage from './components/VariantPage/VariantPage'
 
@@ -44,6 +45,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/login" component={LogInPage} />
+            <Route path="/login/users/" component={UsersPage} />
             <Route exact path="/project" component={ProjectPage} />
             <Route exact path="/variant" component={VariantPage} />
           </Switch>

@@ -10,16 +10,19 @@ const user1 = new UserModel({
     name: 'Eric',
     password: 'Verizon',
     picture: 'https://i.imgur.com/rhYrQyZ.png',
+    aboutMe: 'I love metalworking and the saxaphone.'
 })
 const user2 = new UserModel({
     name: 'Hunter',
     password: 'Placeholder',
     picture: 'https://i.imgur.com/9YLh9UD.jpg',
+    aboutMe: 'I got too fat for my armor, so my my knightly title is "sir cumference".'
 })
 const user3 = new UserModel({
     name: 'Hephaestus',
     password: 'AresIsAJerk',
     picture: 'https://i.imgur.com/d3SDCKY.png',
+    aboutMe: 'My brother Ares is a jerk!'
 })
 // Create Projects and variants
 
