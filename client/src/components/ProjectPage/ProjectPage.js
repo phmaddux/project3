@@ -22,7 +22,8 @@ class ProjectPage extends Component {
   }
   getAllProjects = async () => {
     try {
-      const res = await axios.get('/api/projects')
+      const res = await axios.get(`/api/projects`)
+      // const res = await axios.get(`/api/projects/${id}`)
       this.setState({ projects: res.data })
     } catch (err) {
       console.log(err)
