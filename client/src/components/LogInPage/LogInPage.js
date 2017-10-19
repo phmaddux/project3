@@ -71,7 +71,7 @@ class LogInPage extends Component {
         return (
             <div>
                 <Heading>Join Us</Heading>
-                <Intro>Or, Select an Existing User</Intro>
+                <Intro>Or, select an existing user</Intro>
                 <UsersContainer>
                     {this.state.users.map(user => {
                         return (

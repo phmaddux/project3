@@ -31,8 +31,20 @@ margin: 15px 30px;
 `
 
 const ProjectsContainer = styled.div`
+background: rgba(225, 225, 225, .3);
+border-radius: 3px;
+width: 85vw;
+margin: 10px auto;
+border: 1px solid #e6e6e6;
 `
 const ProjectStyle = styled.div`
+border-radius: 3px;  
+border: 1px solid #e6e6e6;
+background: rgba(225, 225, 225, .3);
+padding: 16px;
+font-size: 1.75rem;
+font-weight: Bold;
+margin: 15px 30px;
 `
 
 class ProjectPage extends Component {

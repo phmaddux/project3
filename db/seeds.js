@@ -62,25 +62,25 @@ const clothing = new ProjectModel({
 const jewelryVariant1 = new ProjectVariantModel({
     name: 'Byzantine Bracelet',
     picture: 'https://i.imgur.com/OpDrlcX.jpg',
-    description: '',
-    additionalTools: '',
-    additionalMaterials: '',
+    description: 'A easy bracelet in the byzantine style weave.',
+    additionalTools: 'None',
+    additionalMaterials: 'A clasp',
     schematics: '****',
 })
 const jewelryVariant2 = new ProjectVariantModel({
     name: 'Bubble Ring Earrings',
     picture: 'https://i.imgur.com/xNikf4e.jpg',
-    description: '',
-    additionalTools: '',
-    additionalMaterials: '',
+    description: 'Dangly earring with larger rings for a visual pop.',
+    additionalTools: 'None.',
+    additionalMaterials: 'Earring hooks',
     schematics: '****',
 })
 const jewelryVariant3 = new ProjectVariantModel({
     name: 'Flower Hairpiece',
     picture: 'https://i.imgur.com/NFV6gfd.jpg',
-    description: '',
-    additionalTools: '',
-    additionalMaterials: '',
+    description: 'A bright accent for a ponytail or braid.',
+    additionalTools: 'none',
+    additionalMaterials: 'Hair band',
     schematics: '****',
 })
 const jewelry = new ProjectModel({
