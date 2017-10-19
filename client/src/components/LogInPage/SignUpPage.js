@@ -36,7 +36,7 @@ class SignUpPage extends Component {
     }
     render() {
         if (this.state.redirectToLogin) {
-            return <Redirect to={`/login/${this.state.newUserID}`} />
+            return <Redirect to={`/login/users/${this.state.newUserId}`} />
         }
 
         return (

@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const UsersController = require('./routes/UsersController')
+const ProjectsController = require('./routes/ProjectsController')
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const app = express();
@@ -22,7 +23,8 @@ app.use(express.static(__dirname + '/client/build/'));
 app.use(bodyParser.json());
 app.use('/api/users', UsersController)
 
-// app.use('/api/projects', ProjectsController)
+
+app.use('/api/projects', ProjectsController)
 
 app.get('/', (req,res) => {
   res.sendFile(__dirname + '/client/build/index.html')
